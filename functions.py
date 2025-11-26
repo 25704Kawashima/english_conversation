@@ -120,38 +120,10 @@ def play_wav(audio_output_file_path, speed=1.0):
     # LLMからの回答の音声ファイルを削除
     os.remove(audio_output_file_path)
 
-# def create_chain(system_template):
-#     """
-#     LLMによる回答生成用のChain作成
-#     """
-
-#     prompt = ChatPromptTemplate.from_messages([
-#         SystemMessage(content=system_template),
-#         MessagesPlaceholder(variable_name="history"),
-#         HumanMessagePromptTemplate.from_template("{input}")
-#     ])
-#     chain = ConversationChain(
-#         llm=st.session_state.llm,
-#         memory=st.session_state.memory,
-#         prompt=prompt
-#     )
-
-#     return chain
-
-def create_chain(user_level):
+def create_chain(system_template):
     """
     LLMによる回答生成用のChain作成
-    Args:
-        user_level: ユーザーの英語レベル（初級者、中級者、上級者）
     """
-    if user_level == "初級者":
-        system_template = ct.SYSTEM_TEMPLATE_BASIC_CONVERSATION_BEGINNER
-    elif user_level == "中級者":
-        system_template = ct.SYSTEM_TEMPLATE_BASIC_CONVERSATION_INTERMEDIATE
-    elif user_level == "上級者":
-        system_template = ct.SYSTEM_TEMPLATE_BASIC_CONVERSATION_ADVANCED
-    else:
-        raise ValueError("Invalid user level")
 
     prompt = ChatPromptTemplate.from_messages([
         SystemMessage(content=system_template),
@@ -165,6 +137,7 @@ def create_chain(user_level):
     )
 
     return chain
+
 
 def create_problem_and_play_audio():
     """

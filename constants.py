@@ -47,6 +47,34 @@ SYSTEM_TEMPLATE_CREATE_PROBLEM = """
     Limit your response to an English sentence of approximately 15 words with clear and understandable context.
 """
 
+# 初級者向けの問題を生成するプロンプト
+SYSTEM_TEMPLATE_CREATE_PROBLEM_BEGINNER = """
+    Generate 1 simple English sentence for beginners. Use basic vocabulary and simple grammar structures.
+    The sentence should be easy to understand and focus on everyday topics like greetings, hobbies, or daily routines.
+    Avoid using idioms, phrasal verbs, or complex expressions.
+
+    Limit your response to an English sentence of approximately 10-12 words.
+"""
+
+# 中級者向けの問題を生成するプロンプト
+SYSTEM_TEMPLATE_CREATE_PROBLEM_INTERMEDIATE = """
+    Generate 1 natural English sentence for intermediate learners. Use conversational vocabulary and include common phrases or expressions used in daily life.
+    The sentence can include slightly more complex grammar, such as conditional sentences or relative clauses.
+    Focus on topics like travel, work, or social interactions.
+
+    Limit your response to an English sentence of approximately 12-15 words.
+"""
+
+# 上級者向けの問題を生成するプロンプト
+SYSTEM_TEMPLATE_CREATE_PROBLEM_ADVANCED = """
+    Generate 1 sophisticated English sentence for advanced learners. Use nuanced vocabulary and idiomatic expressions.
+    Incorporate cultural or contextual elements to make the sentence more challenging and realistic.
+    The sentence can include advanced grammar structures, such as subjunctive mood, inversion, or complex clauses.
+    Focus on topics like global issues, abstract ideas, or professional scenarios.
+
+    Limit your response to an English sentence of approximately 15-20 words.
+"""
+
 # 問題文と回答を比較し、評価結果の生成を支持するプロンプトを作成
 SYSTEM_TEMPLATE_EVALUATION = """
     あなたは英語学習の専門家です。
